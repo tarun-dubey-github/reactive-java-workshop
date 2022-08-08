@@ -45,6 +45,7 @@ public class User {
 
     @Override
     public String toString() {
+        if(id%7==0){throw new RuntimeException("");}
         return "User{" + "id=" + id + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + '}';
     }
 }

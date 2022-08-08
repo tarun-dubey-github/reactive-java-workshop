@@ -46,7 +46,8 @@ public class ReactiveSources {
                 new User(2, "Diego", "Maradona"),
                 new User(4, "Zinedine", "Zidane"),
                 new User(5, "Jürgen", "Klinsmann"),
-                new User(6, "Gareth", "Bale")
+                new User(6, "Gareth", "Bale"),
+                new User(7, "Error", "err")
         ).delayElements(Duration.ofSeconds(1));
     }
 

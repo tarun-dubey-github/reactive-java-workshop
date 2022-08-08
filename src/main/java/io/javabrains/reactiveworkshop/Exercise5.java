@@ -22,7 +22,7 @@ public class Exercise5 {
 
         // Subscribe to a flux using an implementation of BaseSubscriber
         // TODO: Write code here
-        ReactiveSources.userMono().subscribe(new BaseSubscriber(){
+        ReactiveSources.userFlux().subscribe(new BaseSubscriber(){
             @Override
             protected void hookOnNext(Object value) {
                  System.out.println("base subscriber---> "+value);
@@ -31,6 +31,11 @@ public class Exercise5 {
             @Override
             protected void hookOnComplete() {
                 System.out.println("base subscriber---> "+"COMPLETE");
+            }
+
+            @Override
+            protected void hookOnError(Throwable throwable) {
+                System.out.println("base subscriber---> ERROR "+throwable.getMessage());
             }
 
             @Override
