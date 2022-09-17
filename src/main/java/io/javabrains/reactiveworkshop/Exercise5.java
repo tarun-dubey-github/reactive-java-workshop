@@ -1,6 +1,5 @@
 package io.javabrains.reactiveworkshop;
 
-import org.w3c.dom.ls.LSOutput;
 import reactor.core.publisher.BaseSubscriber;
 import reactor.core.publisher.SignalType;
 
@@ -13,7 +12,6 @@ public class Exercise5 {
         // Use ReactiveSources.intNumberMono() and ReactiveSources.userMono()
 
         // Subscribe to a flux using the error and completion hooks
-        // TODO: Write code here
         ReactiveSources.intNumberMono().subscribe(
                 item -> System.out.println(item),
                 err -> System.out.println(err.getMessage()),
@@ -22,9 +20,9 @@ public class Exercise5 {
 
         // Subscribe to a flux using an implementation of BaseSubscriber
         // TODO: Write code here
-        ReactiveSources.userFlux().subscribe(new BaseSubscriber(){
+        ReactiveSources.userFlux().subscribe(new BaseSubscriber<User>(){
             @Override
-            protected void hookOnNext(Object value) {
+            protected void hookOnNext(User value) {
                  System.out.println("base subscriber---> "+value);
             }
 
